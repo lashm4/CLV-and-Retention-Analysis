@@ -1,18 +1,18 @@
-# Telecom Churn & CLV — Marketing Analytics Case (Vodafone-style)
+# Telecom Churn & CLV - Marketing Analytics Case 
 
-**Goal:** Predict customer churn and prioritize **high-value, high-risk** customers for data-driven retention.  
+**Goal:** Predict customer churn and prioritize high-value, high-risk customers for data-driven retention.  
 **What this shows:** end-to-end analytics — cleaning, feature engineering, CLV, modeling, evaluation, and business impact.
 
 ---
 
-## 🔎 Business Context
+## Business Context
 
 Telecoms face recurring churn (contract cancellations). The impact is not equal across customers: losing a **Top-CLV** customer hurts more.  
 This project combines **churn probability** with **margin-adjusted CLV** to focus retention spend where it drives the highest value.
 
 ---
 
-## 📦 Data
+## Data
 
 - Public Telco churn dataset (~7k customers, 20+ features) with demographics, products, contract type, payment method, charges, and churn flag.  
 - File used: `telco_customer_churn.csv`  
@@ -22,7 +22,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## 🛠️ Methods (What I Did)
+## Methods (What I Did)
 
 1. **Cleaning & standardization**
    - Cast `TotalCharges` → numeric; drop invalid rows; trim strings
@@ -55,7 +55,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## 📈 Results
+## Results
 
 - **Churn rate:** ~26.6%
 - **Model (Logistic Regression)**
@@ -72,7 +72,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## 🧩 Why the Features
+## Why the Features
 
 - **Contract & Payment:** strongest actionable levers (move M2M → 12/24-month; nudge payment method away from “electronic check”).
 - **Tenure:** early-life churn is highest → onboarding, first-90-day experience.
@@ -81,7 +81,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## 💡 Recommendations
+## Recommendations
 
 1. **Contract migration:** target month-to-month customers for longer terms.  
 2. **Payment behavior:** incentivize shift from electronic checks to digital payments.  
@@ -91,7 +91,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 .
@@ -110,7 +110,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ```bash
 python -m venv venv
@@ -125,7 +125,7 @@ python analysis.py
 
 ---
 
-## 🔄 Next Steps
+## Next Steps
 
 - Compare with Random Forest or XGBoost for performance.  
 - Build an interactive Streamlit dashboard.  
@@ -133,7 +133,3 @@ python analysis.py
 - Simulate retention scenarios for ROI estimation.
 
 ---
-
-## ✍️ Interview One-Liner
-
-> “I built an interpretable churn model and combined it with margin-adjusted CLV to focus retention budget on the **highest value at risk**. Month-to-month contracts, electronic check payments, short tenure, and low service bundling were the key churn drivers.”
