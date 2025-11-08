@@ -14,7 +14,7 @@ from sklearn.metrics import classification_report, roc_auc_score, confusion_matr
 
 
 ###Load data###
-file_path = "/Users/lashmy/Desktop/telco_customer_churn.csv"
+file_path = "/XXXXXXXXXX/telco_customer_churn.csv"
 df = pd.read_csv(file_path)
 
 print(os.getcwd())   
