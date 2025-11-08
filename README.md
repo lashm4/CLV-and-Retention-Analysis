@@ -1,14 +1,14 @@
 # Telecom Churn & CLV - Marketing Analytics Case 
 
 **Goal:** Predict customer churn and prioritize high-value, high-risk customers for data-driven retention.  
-**What this shows:** end-to-end analytics — cleaning, feature engineering, CLV, modeling, evaluation, and business impact.
+**What this shows:** end to end analytics, cleaning, feature engineering, CLV, modeling, evaluation, and business impact.
 
 ---
 
 ## Business Context
 
-Telecoms face recurring churn (contract cancellations). The impact is not equal across customers: losing a **Top-CLV** customer hurts more.  
-This project combines **churn probability** with **margin-adjusted CLV** to focus retention spend where it drives the highest value.
+Telecoms face recurring churn (contract cancellations). The impact is not equal across customers: losing a Top-CLV customer hurts more.  
+This project combines churn probability with margin adjusted CLV to focus retention spend where it drives the highest value.
 
 ---
 
@@ -50,7 +50,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
    - Coefficient analysis → top churn drivers
 
 6. **Value at Risk**
-   - Join **churn_prob** with **CLV** to identify **High/Top CLV** customers with **high churn risk**
+   - Join churn_prob with CLV to identify High/Top CLV customers with high churn risk
    - Simple impact calc: saved margin if campaign retains X% of that group
 
 ---
@@ -77,7 +77,7 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 - **Contract & Payment:** strongest actionable levers (move M2M → 12/24-month; nudge payment method away from “electronic check”).
 - **Tenure:** early-life churn is highest → onboarding, first-90-day experience.
 - **ServicesCount:** bundling increases stickiness → cross-sell value-add services.
-- **CLV:** focus spend on customers where the **value at risk** is largest.
+- **CLV:** focus spend on customers where the value at risk is largest.
 
 ---
 
@@ -85,9 +85,9 @@ This project combines **churn probability** with **margin-adjusted CLV** to focu
 
 1. **Contract migration:** target month-to-month customers for longer terms.  
 2. **Payment behavior:** incentivize shift from electronic checks to digital payments.  
-3. **Bundle strategy:** promote add-on services to increase engagement.  
-4. **Onboarding care:** improve early-tenure experience to reduce early churn.  
-5. **Value-focused retention:** prioritize **Top/High CLV** customers above risk threshold.
+3. **Bundle strategy:** promote add on services to increase engagement.  
+4. **Onboarding care:** improve early tenure experience to reduce early churn.  
+5. **Value-focused retention:** prioritize Top/High CLV customers above risk threshold.
 
 ---
 
