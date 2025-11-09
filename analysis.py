@@ -11,6 +11,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, roc_auc_score, confusion_matrix, RocCurveDisplay
+from sklearn.ensemble import RandomForestClassifier
 
 
 ###Load data###
