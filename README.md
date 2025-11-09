@@ -1,4 +1,4 @@
-# Telecom Churn & CLV – Marketing Analytics Case Study
+# Telecom Churn & CLV
 
 ## Project Goal
 Predict telecom customer churn and quantify business impact by combining churn probability with Customer Lifetime Value (CLV).  
