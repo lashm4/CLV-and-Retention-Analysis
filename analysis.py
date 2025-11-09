@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 ###Load data###
-file_path = "/XXXXXXXXXX/telco_customer_churn.csv"
+file_path = "data/telco_customer_churn.csv"
 df = pd.read_csv(file_path)
 
 print(os.getcwd())   
