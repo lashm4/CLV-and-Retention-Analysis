@@ -263,3 +263,91 @@ if priority_customers.empty:
 else:
     saved_value = (priority_customers['CLV_realized_margin'] * retention_rate).sum()
     print(f"Estimated saved margin if retaining 20% of high-value at-risk customers: €{saved_value:,.0f}")
+
+
+####################################################
+###RANDOM FOREST MODEL (MODEL 2)###
+####################################################
+
+print("\n============= RANDOM FOREST MODEL =============\n")
+
+#Random Forest pipeline (same preprocessing)
+rf_model = Pipeline(steps=[
+    ('preprocessor', preprocess),
+    ('classifier', RandomForestClassifier(
+        n_estimators=300,
+        max_depth=None,
+        min_samples_split=5,
+        min_samples_leaf=3,
+        random_state=42,
+        class_weight='balanced'
+    ))
+])
+
+#Train
+rf_model.fit(X_train, y_train)
+
+#Predict
+rf_pred_proba = rf_model.predict_proba(X_test)[:, 1]
+rf_pred = (rf_pred_proba >= 0.5).astype(int)
+
+#Metrics
+print("\nClassification Report (Random Forest):\n")
+print(classification_report(y_test, rf_pred))
+
+print("ROC AUC (Random Forest):", round(roc_auc_score(y_test, rf_pred_proba), 3))
+
+#ROC Curve
+RocCurveDisplay.from_estimator(rf_model, X_test, y_test)
+plt.title("ROC Curve – Random Forest")
+plt.show()
+
+#Confusion Matrix
+ConfusionMatrixDisplay.from_estimator(rf_model, X_test, y_test, cmap='Purples')
+plt.title("Confusion Matrix – Random Forest")
+plt.show()
+
+###############################
+###Random Forest Importance ###
+###############################
+
+#get one-hot encoded feature names
+ohe = rf_model.named_steps['preprocessor'].named_transformers_['cat']
+cat_feature_names = ohe.get_feature_names_out(categorical)
+all_rf_features = np.concatenate([cat_feature_names, numeric])
+
+#Extract importances
+rf_importances = rf_model.named_steps['classifier'].feature_importances_
+
+rf_feature_imp = pd.DataFrame({
+    'feature': all_rf_features,
+    'importance': rf_importances
+}).sort_values('importance', ascending=False)
+
+print("\nTop 10 Random Forest Features:\n")
+print(rf_feature_imp.head(10))
+
+plt.figure(figsize=(8,6))
+sns.barplot(x='importance', y='feature', data=rf_feature_imp.head(10), palette='viridis')
+plt.title('Top 10 Feature Importances – Random Forest')
+plt.xlabel('Importance Score')
+plt.ylabel('Feature')
+plt.show()
+
+#################################################
+###Compare Logistic Regression vs Random Forest###
+#################################################
+
+logistic_auc = roc_auc_score(y_test, y_pred_proba)
+rf_auc = roc_auc_score(y_test, rf_pred_proba)
+
+print("\nMODEL PERFORMANCE COMPARISON")
+print("----------------------------------")
+print(f"Logistic Regression AUC: {logistic_auc:.3f}")
+print(f"Random Forest AUC:      {rf_auc:.3f}")
+
+if rf_auc > logistic_auc:
+    print("\n Random Forest performs BETTER than Logistic Regression.")
+else:
+    print("\nLogistic Regression performs BETTER (rare for churn models).")
+
