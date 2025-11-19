@@ -162,7 +162,7 @@ Assuming:
 - Using margin adjusted CLV
 
 ### Estimated Profit Saved:
-# **€15,971**
+ €15,971
 
 This shows how data driven targeting generates measurable financial value.
 
