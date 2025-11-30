@@ -19,7 +19,6 @@ This project solves that by combining:
 **CLV Segmentation**  
 **High‑value retention targeting**  
 
----
 
 # 2. Data Description
 
@@ -32,7 +31,6 @@ Includes demographics, service usage, contract type, billing method, charges, an
 `MonthlyCharges`, `tenure`, `Churn`,  
 and many value‑added service indicators.
 
----
 
 # 3. Methods & Pipeline
 
@@ -66,8 +64,6 @@ Both models used:
 - ROC AUC evaluation  
 - Feature importance analysis  
 
----
-
 # 4. Model Results & Comparison
 
 ## 4.1 Logistic Regression – Results
@@ -88,8 +84,6 @@ This model is reliable for:
 - Designing retention strategies  
 - Explaining results to marketing leaders  
 
----
-
 ## 4.2 Random Forest – Results
 
 **Accuracy:** 0.77  
@@ -108,7 +102,6 @@ RF is great at recall (captures more churners), but:
 - Lower precision = more false positives  
 - Less interpretable  
 
----
 
 ## 4.3 Model Comparison Summary
 
@@ -118,8 +111,6 @@ RF is great at recall (captures more churners), but:
 | **Random Forest** | 0.77 | 0.831 | Higher recall but more noise |
 
 **Winner: Logistic Regression** (better AUC, more actionable)
-
----
 
 # 5. Churn Drivers – What Causes Churn?
 
@@ -139,7 +130,6 @@ RF is great at recall (captures more churners), but:
 
 This creates highly actionable levers for marketing, CX, and product teams.
 
----
 
 # 6. High-Value At-Risk Customers
 
@@ -152,8 +142,6 @@ This creates highly actionable levers for marketing, CX, and product teams.
 
 These customers represent the **most important group** for retention.
 
----
-
 # 7. Financial Impact Analysis
 
 Assuming:
@@ -165,7 +153,6 @@ Assuming:
 
 This shows how data driven targeting generates measurable financial value.
 
----
 
 # 8. Marketing Recommendations (Expanded & Strategic)
 
@@ -178,8 +165,6 @@ This shows how data driven targeting generates measurable financial value.
 
 **Expected impact:**  
 30-40% churn reduction in this segment.
-
----
 
 ## 8.2 Fiber Customer Experience Improvement  
 Fiber customers show elevated churn due to:
@@ -194,8 +179,6 @@ Fiber customers show elevated churn due to:
 - Dedicated fiber quality support line  
 - VIP fiber loyalty benefits  
 
----
-
 ## 8.3 Value-Added Service Bundling
 Because VAS (tech support, security) reduce churn:
 
@@ -204,8 +187,6 @@ Because VAS (tech support, security) reduce churn:
 - Create “home protection” or “family bundle” packages  
 - Offer 3-month free trials for VAS services  
 - Add streaming bundles to reduce OTT substitution risk  
-
----
 
 ## 8.4 Early-Life Churn Reduction (first 60-90 days)
 Customers with low tenure churn the most.
@@ -216,7 +197,6 @@ Customers with low tenure churn the most.
 - Tutorials for modem setup & troubleshooting  
 - Free temporary upgrades in first month  
 
----
 
 ## 8.5 Improve Digital Engagement
 Paperless billing users churn more.
@@ -232,7 +212,6 @@ Reasons:
 - New “digital only loyalty program”  
 - Goal: increase emotional engagement  
 
----
 
 ## 8.6 Precision Targeting for High CLV Customers
 Focus retention budget where value at risk is highest:
@@ -248,7 +227,6 @@ Focus retention budget where value at risk is highest:
 - Dedicated retention agent  
 - High value loyalty perks  
 
----
 
 # 9. How to Improve the Models Further
 
@@ -270,7 +248,6 @@ To handle churn class imbalance.
 ### Calibrate probabilities  
 For more reliable retention budget allocation.
 
----
 
 # 10. Repository Structure
 
@@ -290,7 +267,6 @@ For more reliable retention budget allocation.
 └── requirements.txt
 ```
 
----
 
 # 11. How to Run
 
@@ -301,7 +277,6 @@ pip install -r requirements.txt
 python analysis.py
 ```
 
----
 
 # 12. Final Takeaway
 
