@@ -4,7 +4,6 @@
 Predict telecom customer churn and quantify business impact by combining churn probability with Customer Lifetime Value (CLV).  
 The goal is not only to predict who will churn, but which churners matter most for profit.
 
----
 
 # 1. Business Context
 
